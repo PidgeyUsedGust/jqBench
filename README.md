@@ -82,20 +82,20 @@ Loading returns typed records in `dataset.benchmarks` and does not execute progr
 
 All names below are available from `jqbench`.
 
-| API | Purpose |
-| --- | --- |
-| `load(name, *, path=None, download=False, revision=None)` | Load a named dataset from local files or, with opt-in, the Hub. |
-| `Dataset` | Hold a dataset's name and typed records in `.benchmarks`. |
-| `Benchmark` | Describe a task, reference expressions, inputs, and evaluation settings. |
-| `Program(kind=..., code=...)` | Describe a jq or Python candidate program. |
-| `compiles(program)` | Return whether the program passes compilation checks, without executing it. |
-| `run(program, input)` | Execute a program on one JSON input and return its output. |
-| `evaluate_benchmark(program, benchmark)` | Return `Metrics` using a benchmark's inputs, references, and settings. |
-| `evaluate(program, inputs, solutions, settings=None)` | Return `Metrics` for explicit inputs and jq reference expressions. |
-| `aggregate(metrics)` | Return mean scores keyed by `MetricNames`; requires a nonempty collection. |
-| `equals(expected, actual, settings=None)` | Return a `ValueMatch` category, not a boolean, when comparing JSON values. |
-| `EvaluationSettings` | Configure how JSON keys and array order affect comparison. |
-| `Metrics` | Hold compilation, execution, value-match, and exact-match results. |
+| API                                                       | Purpose                                                                     |
+| --------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `load(name, *, path=None, download=False, revision=None)` | Load a named dataset from local files or, with opt-in, the Hub.             |
+| `Dataset`                                                 | Hold a dataset's name and typed records in `.benchmarks`.                   |
+| `Benchmark`                                               | Describe a task, reference expressions, inputs, and evaluation settings.    |
+| `Program(kind=..., code=...)`                             | Describe a jq or Python candidate program.                                  |
+| `compiles(program)`                                       | Return whether the program passes compilation checks, without executing it. |
+| `run(program, input)`                                     | Execute a program on one JSON input and return its output.                  |
+| `evaluate_benchmark(program, benchmark)`                  | Return `Metrics` using a benchmark's inputs, references, and settings.      |
+| `evaluate(program, inputs, solutions, settings=None)`     | Return `Metrics` for explicit inputs and jq reference expressions.          |
+| `aggregate(metrics)`                                      | Return mean scores keyed by `MetricNames`; requires a nonempty collection.  |
+| `equals(expected, actual, settings=None)`                 | Return a `ValueMatch` category, not a boolean, when comparing JSON values.  |
+| `EvaluationSettings`                                      | Configure how JSON keys and array order affect comparison.                  |
+| `Metrics`                                                 | Hold compilation, execution, value-match, and exact-match results.          |
 
 ## Execution and evaluation
 
@@ -106,3 +106,17 @@ Evaluation records candidate compilation and execution failures in the scores; i
 Exact match checks whether a jq candidate's source equals a reference expression; value match compares the resulting JSON values.
 
 For research workflows, see [Experiments](experiments/README.md).
+
+## Citation
+
+If you use jqBench in your research, please cite the jqBench paper:
+
+```bibtex
+@inproceedings{verbruggen2026iclr-jqbench,
+  title     = {{jqBench: A Benchmark for Reading and Editing JSON from Natural Language And/or Examples}},
+  author    = {Verbruggen, Gust and Parnin, Chris and Le, Vu and Gulwani, Sumit},
+  booktitle = {International Conference on Learning Representations},
+  year      = {2026},
+  url       = {https://mlanthology.org/iclr/2026/verbruggen2026iclr-jqbench/}
+}
+```
