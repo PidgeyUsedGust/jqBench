@@ -1,0 +1,19 @@
+# Historical identity retained; model.id selects fresh OpenRouter runs.
+source: data
+dataset: jqSpider.jsonl
+solver:
+  name: JqAgent
+  documentation: false
+  iterations: 8
+  implicit: false
+input:
+  kind: Schema
+  which: Na
+model:
+  name: Gpt41
+  n: 1
+  temperature: 0.0
+  reasoning: null
+  id: openai/gpt-4.1
+cache: solve/kind=Schema-which=Na/spider-JqAgent-Gpt41.json
+output: spider/kind=Schema-which=Na/spider-JqAgent-Gpt41.json

@@ -1,0 +1,8 @@
+# All relative paths are resolved against this file, not the working directory.
+data: ../data
+stack: ../artifacts/unpacked/generation/stack
+spider: ../artifacts/unpacked/generation/spider
+results: ../artifacts/unpacked/results
+caches: ../artifacts/unpacked/caches
+reports: ../artifacts/reports
+posts: ../artifacts/raw/Posts.xml

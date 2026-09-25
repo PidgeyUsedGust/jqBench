@@ -1,0 +1,19 @@
+# Historical identity retained; model.id selects fresh OpenRouter runs.
+source: data
+dataset: jqStack.jsonl
+solver:
+  name: JqAgent
+  documentation: true
+  iterations: 8
+  implicit: true
+input:
+  kind: InputOutput
+  which: AllButOne
+model:
+  name: Gpt5ChatMini
+  n: 1
+  temperature: 0.0
+  reasoning: null
+  id: null
+cache: solve/kind=InputOutput-which=AllButOne/jqStackFixed-JqAgent+Documentation+Implicit-Gpt5ChatMini.json
+output: fixed/kind=InputOutput-which=AllButOne/jqStackFixed-JqAgent+Documentation+Implicit-Gpt5ChatMini.json

@@ -1,0 +1,18 @@
+# Historical identity retained; model.id selects fresh OpenRouter runs.
+source: data
+dataset: jqStack.jsonl
+solver:
+  name: PythonAgent
+  iterations: 8
+  implicit: true
+input:
+  kind: InputOutput
+  which: AllButOne
+model:
+  name: ClaudeOpus41
+  n: 1
+  temperature: 0.0
+  reasoning: null
+  id: anthropic/claude-opus-4.1
+cache: solve/kind=InputOutput-which=AllButOne/jqStackFixed-PythonAgent+Implicit-ClaudeOpus41.json
+output: fixed/kind=InputOutput-which=AllButOne/jqStackFixed-PythonAgent+Implicit-ClaudeOpus41.json

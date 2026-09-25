@@ -1,0 +1,22 @@
+# Historical identity retained; model.id selects fresh OpenRouter runs.
+source: runs
+dataset: generation/stack/e_filtered/filtered-gpt5chat.json
+solver:
+  name: JqSampler
+  documentation: false
+input:
+  kind: InputOutput
+  which: AllButOne
+model:
+  name: ClaudeOpus41
+  n: 1
+  temperature: 0.0
+  reasoning: null
+  id: anthropic/claude-opus-4.1
+cache: solve/kind=InputOutput-which=AllButOne/jqStackFiltered-JqSampler-ClaudeOpus41.json
+output: filter/kind=InputOutput-which=AllButOne/jqStackFiltered-JqSampler-ClaudeOpus41.json
+filter:
+  results:
+  - filter/kind=InputOutput-which=AllButOne/jqStack-JqSampler-Gpt5Chat.json
+  - filter/kind=InputOutput-which=AllButOne/jqStackFiltered-JqSampler-ClaudeOpus41.json
+  output: generation/stack/e_filtered/filtered-claudeopus41.json

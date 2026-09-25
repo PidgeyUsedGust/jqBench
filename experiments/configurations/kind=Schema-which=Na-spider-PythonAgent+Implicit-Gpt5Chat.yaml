@@ -1,0 +1,18 @@
+# Historical identity retained; model.id selects fresh OpenRouter runs.
+source: data
+dataset: jqSpider.jsonl
+solver:
+  name: PythonAgent
+  iterations: 8
+  implicit: true
+input:
+  kind: Schema
+  which: Na
+model:
+  name: Gpt5Chat
+  n: 1
+  temperature: 0.0
+  reasoning: null
+  id: null
+cache: solve/kind=Schema-which=Na/spider-PythonAgent+Implicit-Gpt5Chat.json
+output: spider/kind=Schema-which=Na/spider-PythonAgent+Implicit-Gpt5Chat.json
